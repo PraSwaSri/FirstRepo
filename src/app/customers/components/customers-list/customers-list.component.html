@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <p class="h2 text-danger">View All Customers</p>
+            <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, nam illum! Placeat, corrupti. Voluptates corporis sint accusamus sunt similique, necessitatibus dolorem quod eum quidem excepturi molestiae ad, est, quam nobis.</p>
+         </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <table class="table table-danger text-center table-striped table-hover">
+                <thead class="bg-dark text-white">
+                    <tr>
+                        <td>Id</td>
+                        <td>Name</td>
+                        <td>Email</td>
+                        <td>Address</td>
+                        <td>Phone</td>
+                        <td>Company</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor = "let c of customersList">
+                        <td>{{c.id}}</td>
+                        <td><a routerLink = "/customers/list/{{c.name}}">{{c.name}}</a>
+                            </td>
+                        <td>{{c.email}}</td>
+                        <td>{{c.address.street}},{{c.address.city}}</td>
+                        <td>{{c.phone}}</td>
+                        <td>{{c.company.name}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
